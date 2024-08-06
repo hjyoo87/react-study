@@ -1,10 +1,20 @@
+import MenuList from './components/MenuList.jsx';
+import Header from "./components/Header";
+import { CartContextProvider } from './store/CartContext.jsx';
+import { UserProgressContextProvider } from './store/UserProgressContext.jsx';
+import Cart from './components/Cart.jsx';
+import Checkout from './components/Checkout.jsx';
+
 function App() {
   return (
-    <>
-      <h1>You got this 💪</h1>
-      <p>Stuck? Not sure how to proceed?</p>
-      <p>Don't worry - we've all been there. Let's build it together!</p>
-    </>
+    <UserProgressContextProvider>
+      <CartContextProvider>
+        <Header />
+        <MenuList />
+        <Cart />
+        <Checkout />
+      </CartContextProvider>
+    </UserProgressContextProvider>
   );
 }
 
